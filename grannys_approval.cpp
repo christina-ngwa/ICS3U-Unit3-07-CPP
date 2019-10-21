@@ -9,27 +9,24 @@
 int main() {
     // This function uses a compound boolean statement
 
-     std::string guess;
-     int guess_as_num;
+    std::string name;
+    std::string looks;
+    std::string salary;
 
     // input
-    std::cout << "Guess what number I'm thinking of! (between 1 & 100)"
-    << std::endl;
-    std::cout << "Enter your guess: ";
-    std::cin >> guess;
+    std::cout << "Will you be approved by my granny? Answer her questions to "
+                 "find out." << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << "What is your first name sonny boy?: "; std::cin >> name;
+    std::cout << "Is your salary 100,000+? (Yes/No): "; std::cin >> salary;
+    std::cout << "Do people constantly compliment you on your looks?: ";
+    std::cin >> looks;
     std::cout << "" << std::endl;
 
     // process
-    try {
-        guess_as_num = std::stoi(guess);
-        if (guess_as_num == randomanswer) {
-             // output
-             std::cout << "You are correct!" << std::endl;
-        } else {
-            std::cout << "Sorry, the answer I was thinking of was "
-            << randomanswer << "." << std::endl;
-        }
-    } catch (std::invalid_argument) {
-         std::cout << "That is invalid. Try again." << std::endl;
+    if (salary == "yes" || looks == "yes") {
+        std::cout << name << ", you have my approval." << std::endl;
+    } else {
+        std::cout << "You will never see her again." << std::endl;
     }
 }
